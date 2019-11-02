@@ -8,6 +8,7 @@ operators = {
     '-': operator.sub,
     '*': operator.mul,
     '/': operator.truediv,
+    '^': operator.pow,
 }
 
 def calculate(myarg):
@@ -17,6 +18,7 @@ def calculate(myarg):
             token = int(token)
             stack.append(token)
         except ValueError:
+            # TODO: handle stack of bracket!!
             function = operators[token]
             arg2 = stack.pop()
             arg1 = stack.pop()
